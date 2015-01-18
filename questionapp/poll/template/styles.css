@@ -1,0 +1,123 @@
+body {
+	font-family: Arial, sans-serif;
+	font-size: 10pt;
+	background-color: #ffffff;
+	color: #000000;
+}
+
+h1 {
+	width: 600px;
+	font-family: Arial, sans-serif;
+	font-size: 16pt;
+	font-weight: bold;
+	color: #000000;
+	border-bottom: solid 4px #000000;
+}
+
+.question {
+	font-weight: bold;
+	font-size: 12pt;
+}
+
+fieldset {
+	border: solid 1px #666666;
+	width: 300px;
+	padding: 0 10px 10px 10px;
+	margin-bottom: 15px;
+}
+
+legend {
+	color: #ffffff;
+	background: #336633;
+	border: 1px outset #cccccc;
+	padding: 2px 2px 0 2px;
+	font-weight: bold;
+}
+
+.currentResults {
+	font-size: 8pt;
+}
+
+.vote {
+	margin-top: 4px;
+	padding: 0 0 0 0;
+}
+
+.vote p {
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+
+.errorMessage {
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	font-size: 10pt;
+	color: #ff0000;
+}
+
+.credit {
+	font-family: Arial, sans-serif;
+	font-size: 8pt;
+	color: #696969;
+}
+
+a:link, a:visited, a:active {
+	text-decoration: none;
+	background: transparent;
+}
+
+a:link {
+	color: #0000ff;
+}
+
+a:visited {
+	color: #990099;
+}
+
+a:active {
+	color: #ff0000;
+}
+
+a:link:hover, a:visited:hover, a:active:hover {
+	color: #ff0000;
+}
+
+input.submit {
+	color: #000000;
+	background: #99cc99;
+	border: 2px outset #cccccc;
+}
+
+/* Default for the poll bars */
+
+.pollBar {
+	height: 15px;
+	background: #ff0000;
+	border: 1px solid #000000;
+}
+
+/* Poll bar ids are sequential and one-indexed */
+
+#pollBar1 {
+	background: #ff0000;
+}
+
+#pollBar2 {
+	background: #00ff00;
+}
+
+#pollBar3 {
+	background: #0000ff;
+}
+
+#pollBar4 {
+	background: #ffff00;
+}
+
+#pollBar5 {
+	background: #00ffff;
+}
+
+#pollBar6 {
+	background: #ff00ff;
+}
