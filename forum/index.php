@@ -6,22 +6,16 @@ if ($_GET['updated'])
     $update_message = "UPDATED";
     //$update_message = "";
 
-if ($_GET['text1'] && $_GET['text2'] && $_GET['text3'])
-{
+$conf_file = './forum.conf';
+$configuration = json_decode(file_get_contents($conf_file), true);
 
-$text1_text = $_GET['text1'];
-$text2_text = $_GET['text2'];
-$text3_text = $_GET['text3'];
+$count = (int)$configuration['no_fields'];
 
-file_put_contents('./text1.txt', $text1_text);
-file_put_contents('./text2.txt', $text2_text);
-file_put_contents('./text3.txt', $text3_text);
-}
-else
-{
-$text1_text = file_get_contents('./text1.txt', true);
-$text2_text = file_get_contents('./text2.txt', true);
-$text3_text = file_get_contents('./text3.txt', true);
+for ($i = 1; $i <=$count; $i++) {
+
+if ($_GET['text'.$i])
+ file_put_contents('./text'.$i.'.txt', $_GET['text'.$i]);
+
 }
 
 ?>
@@ -49,19 +43,27 @@ $("#debugdiv").load("./refresh.php");
 
 <div id="debugdiv"></div>
 
-<h2>Message board</h2>
-
-
-Leave an anonymous message on our virtual message board 
-    <br/>
+<?php echo $configuration['intro'];?>
+<br/>
 <br/>
 <div id="update"><?php echo $update_message?></div>
-    <br/>
 
 <form method="GET">
-<textarea id="text1" name="text1" class="form-control" rows="10"><?php echo $text1_text?></textarea>
-<textarea id="text2" name="text2" class="form-control" rows="10"><?php echo $text2_text?></textarea>
-<textarea id="text3" name="text3" class="form-control" rows="10"><?php echo $text3_text?></textarea>
+<?php 
+
+for ($i = 1; $i <=$count; $i++) {
+
+    $content_file = "text".$i.".txt";
+    $text = file_get_contents($content_file, true);
+
+    if (($i-1) % $configuration['fields_per_row'] == 0)
+        echo "<br/>";
+
+    //echo '<textarea id="text'.$i.'" name="text'.$i.'" class="form-control" rows="10" cols="50">'.$text.'</textarea>';
+    echo '<textarea id="text'.$i.'" name="text'.$i.'" class="form-control" rows="'.$configuration['rows'].'" cols="'.$configuration['cols'].'">'.$text.'</textarea>';
+}
+
+?>
     <br/>
     <button type="submit" class="btn btn-primary">Save</button>
 </form>
@@ -72,7 +74,7 @@ Inspired by <a href="http://stupidforum.com">stupid forum</a> (by Miltos Manetas
 
 <br/>
 <br/>
-<a href="./admin.php">admin page</a> (under construction)
+<a href="./admin.php">admin panel</a>
 
 
 

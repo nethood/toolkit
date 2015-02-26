@@ -1,9 +1,16 @@
 <?php 
 
 //check if any of the text files has been modified and reload page if needed
+//
+$conf_file = './forum.conf';
+$configuration = json_decode(file_get_contents($conf_file), true);
 
-$count = 3;
+
+
+$count = (int)$configuration['no_fields'];
 $modified = false;
+
+//echo "count = ".$count;
 
 for ($i = 1; $i <=$count; $i++) {
 
