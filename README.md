@@ -1,7 +1,7 @@
 
 The main idea of the nethood toolkit is to provide easy to install and customize web applications that are suitable for use in local situations, hosted on offline networks like the piratebox.cc, superglue.it, ocupyhere.org, etc.
 
-There are many guides online on how to create your own offline network using a Raspberry Pi such as http://subnod.es/ or http://people.ee.ethz.ch/~gugdavid/pi_project/setup.html and we are working on building one for the nethood toolkit as well. And you can find some nice ideas on physical artefacts that could accompany your offline network here: http://nethood.org/links.php (and more soon).
+There are many guides online on how to create your own offline network using a Raspberry Pi such as http://subnod.es/ and we are working on building one for the nethood toolkit as well (including the option to have an additional Internet connection). And you can find some nice ideas on physical artefacts that could accompany your offline network here: http://nethood.org/links.php (and more soon).
 
 For now, there are two very simple applications available. If you find them useful, you just need to copy the corresponding to your web server directory (/var/www). No databases or any other library is used (except from jquery that is included in the corresponding folder when used). 
 
